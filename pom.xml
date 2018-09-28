@@ -52,6 +52,14 @@
 			<artifactId>jedis</artifactId>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/de.chandre.quartz/spring-boot-starter-quartz -->
+		<dependency>
+			<groupId>de.chandre.quartz</groupId>
+			<artifactId>spring-boot-starter-quartz</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
