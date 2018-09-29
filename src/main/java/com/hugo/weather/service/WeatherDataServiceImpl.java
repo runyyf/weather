@@ -69,4 +69,19 @@ public class WeatherDataServiceImpl implements WeatherDataService {
 
         return resp;
     }
+
+
+    @Override
+    public void syncWeatherDataByCityId(String cityId) {
+        String url = WEATHER_URL+"citykey="+cityId;
+        String strBody = null;
+        ValueOperations<String, String> ops = stringRedisTemplate.opsForValue();
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity(url,String.class);
+        if (responseEntity.getStatusCodeValue() == 200){
+            strBody = responseEntity.getBody();
+            ops.set(url,strBody,TIME_OUT, TimeUnit.SECONDS);
+            logger.info("url定时更新:"+url);
+        }
+
+    }
 }
