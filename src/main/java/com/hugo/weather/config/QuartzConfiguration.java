@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class QuartzConfiguration {
 //    请求间隔时间
-    private final static int TIME = 1800;
+    private final static int TIME = 180;
     //    //JobDetail
 //    public JobDetail weatherDataSyncJobDetail(){
 //        return JobBuilder.newJob(WeatherDataSyncJob.class).withIdentity("weatherDataSyncJobDetail").storeDurably()
