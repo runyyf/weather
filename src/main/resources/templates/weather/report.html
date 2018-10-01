@@ -6,5 +6,29 @@
 </head>
 <body>
     <h3 th:text="${reportModel.title}">12</h3>
+    <select>
+        <option th:each="city : ${reportModel.cityList}"
+                th:value="${city.cityId}" th:text="${city.cityName}"
+                th:selected="${reportModel.cityId}"
+        ></option>
+    </select>
+    <h1 th:text="${reportModel.report.city}"></h1>
+    <p>
+        空气质量指数：<span th:text="${reportModel.report.aqi}"></span>
+    </p>
+    <p>
+        当前温度：<span th:text="${reportModel.report.wendu}"></span>
+    </p>
+    <p>
+        温馨提示：<span th:text="${reportModel.report.ganmao}"></span>
+    </p>
+
+    <div th:each="forecast : ${reportModel.report.forecast}">
+        <p th:text="${forecast.date}">日期</p>
+        <p th:text="${forecast.type}">天气类型</p>
+        <p th:text="${forecast.high}">最高温度</p>
+        <p th:text="${forecast.low}">最低温度</p>
+        <p th:text="${forecast.fengxiang}">风向</p>
+    </div>
 </body>
 </html>
