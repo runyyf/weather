@@ -23,7 +23,7 @@ public class WeatherReportController {
 
     @GetMapping("/cityId/{cityId}")
     public ModelAndView getWeatherByCityId(@PathVariable("cityId")String cityId,Model model) throws Exception {
-        model.addAttribute("title","12345678");
+        model.addAttribute("title","天气预报系统");
         model.addAttribute("cityId",cityId);
         model.addAttribute("cityList",cityDataService.listCity());
         model.addAttribute("report",weatherReportService.getDataByCityId(cityId));
